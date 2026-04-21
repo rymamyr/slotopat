@@ -32,9 +32,9 @@
           <div className="mb-12 flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-4 shadow-[0_0_40px_rgba(34,211,238,0.06)] backdrop-blur-xl">
             <div className="flex items-center gap-4">
               <img
-                src="/logo.png"
+              src="/logo-clean.png"
                 alt="Slotopat"
-                className="h-11 w-auto"
+                className="h-12 w-auto"
               />
               <div className="hidden md:block">
                 <div className="text-[11px] uppercase tracking-[0.3em] text-cyan-300/65">
