@@ -30,18 +30,18 @@
 
         <section className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
           <div className="mb-12 flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-4 shadow-[0_0_40px_rgba(34,211,238,0.06)] backdrop-blur-xl">
-            <div className="flex items-center gap-4">
-              <img
-              src="/logo-clean.png"
-                alt="Slotopat"
-                className="h-32 w-auto"
-              />
-              <div className="hidden md:block">
-                <div className="text-[11px] uppercase tracking-[0.3em] text-cyan-300/65">
-                  Seçilmiş Platformlar
-                </div>
-              </div>
-            </div>
+           <div className="flex items-center gap-4">
+  <img
+    src="/logo-clean.png"
+    alt="Slotopat"
+    className="h-16 w-auto object-contain drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]"
+  />
+  <div className="hidden md:block">
+    <div className="text-[11px] uppercase tracking-[0.3em] text-cyan-300/65">
+      Seçilmiş Platformlar
+    </div>
+  </div>
+</div>
 
             <div className="hidden items-center gap-3 md:flex">
               <a
