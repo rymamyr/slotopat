@@ -34,7 +34,7 @@
               <img
               src="/logo-clean.png"
                 alt="Slotopat"
-                className="h-12 w-auto"
+                className="h-32 w-auto"
               />
               <div className="hidden md:block">
                 <div className="text-[11px] uppercase tracking-[0.3em] text-cyan-300/65">
