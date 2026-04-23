@@ -59,25 +59,25 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <div className="mb-5 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
               Gerçek veri • Güncel liste • Güven filtresi
             </div>
 
-            <h1 className="text-5xl font-bold leading-[1.02] md:text-7xl">
+            <h1 className="text-5xl font-bold leading-[0.98] md:text-6xl xl:text-7xl">
               En Güvenilir Slot Platformları
               <span className="mt-2 block bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">
                 Sadece seçilmiş sponsorlar
               </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-7 text-white/60 md:text-lg">
+            <p className="mt-7 max-w-xl text-base leading-8 text-white/60 md:text-lg">
               Tüm sponsorlar filtrelenmiş, test edilmiş ve güvenilirlik odaklı seçilmiştir.
               Rastgele liste yok, sadece gerçekten öne çıkanlar.
             </p>
 
-            <div className="mt-8 grid max-w-2xl grid-cols-3 gap-4">
+            <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
                 <div className="text-2xl font-bold text-cyan-400">{sponsors.length}+</div>
                 <div className="mt-1 text-sm text-white/50">Aktif Sponsor</div>
@@ -94,7 +94,7 @@ export default async function Home() {
           </div>
 
           {featured && (
-            <div id="featured" className="relative">
+            <div id="featured" className="relative lg:mt-8">
               <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-6 shadow-[0_0_50px_rgba(34,211,238,0.08)] backdrop-blur-2xl">
                 <div className="mb-5 flex items-center justify-between">
