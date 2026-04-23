@@ -14,6 +14,7 @@ type Sponsor = {
   accentTo?: string
   externalUrl?: string
   logoUrl?: string
+  slug?: string
 }
 
 export default async function Home() {
@@ -73,13 +74,19 @@ export default async function Home() {
             </h1>
 
             <p className="mt-7 max-w-xl text-base leading-8 text-white/60 md:text-lg">
-              Tüm sponsorlar filtrelenmiş, test edilmiş ve güvenilirlik odaklı seçilmiştir.
-              Rastgele liste yok, sadece gerçekten öne çıkanlar.
+              Tüm sponsorlar filtrelenmiş, test edilmiş ve güvenilirlik odaklı
+              seçilmiştir. Rastgele liste yok, sadece gerçekten öne çıkanlar.
             </p>
+
+            <div className="mt-4 text-sm text-white/40">
+              Manuel inceleme + kullanıcı geri bildirimleri ile oluşturulmuştur
+            </div>
 
             <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
-                <div className="text-2xl font-bold text-cyan-400">{sponsors.length}+</div>
+                <div className="text-2xl font-bold text-cyan-400">
+                  {sponsors.length}+
+                </div>
                 <div className="mt-1 text-sm text-white/50">Aktif Sponsor</div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
@@ -100,8 +107,13 @@ export default async function Home() {
                 <div className="mb-5 flex items-center justify-between">
                   <div>
                     <p className="text-sm text-white/45">Öne Çıkan Sponsor</p>
-                    <h3 className="text-2xl font-semibold">{featured.name}</h3>
+                    <div className="mt-2 flex items-center gap-2 text-xs text-cyan-300">
+                      <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+                      Doğrulanmış • Aktif platform
+                    </div>
+                    <h3 className="mt-2 text-2xl font-semibold">{featured.name}</h3>
                   </div>
+
                   <div className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300 shadow-[0_0_16px_rgba(34,211,238,0.12)]">
                     Featured
                   </div>
@@ -118,14 +130,17 @@ export default async function Home() {
                         />
                       ) : (
                         <span className="text-xl font-bold text-cyan-200">
-                          {featured.short || featured.name.slice(0, 2).toUpperCase()}
+                          {featured.short ||
+                            featured.name.slice(0, 2).toUpperCase()}
                         </span>
                       )}
                     </div>
 
                     <div>
                       <div className="text-2xl font-bold">{featured.name}</div>
-                      <div className="mt-1 text-sm text-white/50">{featured.bonus}</div>
+                      <div className="mt-1 text-sm text-white/50">
+                        {featured.bonus}
+                      </div>
 
                       <div className="mt-3 flex gap-2">
                         {featured.tag && (
@@ -170,9 +185,10 @@ export default async function Home() {
 
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {sponsors.map((s, i) => (
-            <div
+            <a
               key={s._id}
-              className="group rounded-[28px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:border-cyan-400/50 hover:bg-white/[0.07] hover:shadow-[0_0_30px_rgba(34,211,238,0.14)]"
+              href={s.slug ? `/sponsor/${s.slug}` : '#'}
+              className="group block rounded-[28px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:border-cyan-400/50 hover:bg-white/[0.07] hover:shadow-[0_0_30px_rgba(34,211,238,0.14)]"
             >
               <div className="mb-5 flex items-center justify-between">
                 <span className="text-xs text-white/35">
@@ -204,25 +220,24 @@ export default async function Home() {
                 <div>
                   <div className="text-lg font-semibold">{s.name}</div>
                   <div className="text-sm text-white/50">{s.bonus}</div>
+                  <div className="mt-2 text-[11px] text-white/40">
+                    Güncel kontrol: aktif • hızlı ödeme
+                  </div>
                 </div>
               </div>
 
-             <div className="mt-3 flex items-center justify-between gap-3 text-xs text-white/45">
-  <span className="truncate">{s.category || 'Premium Sponsor'}</span>
-  <span className="h-1 w-1 rounded-full bg-cyan-400/70" />
-  <span className="truncate">{s.bonus || 'Güncel teklif'}</span>
-</div>
+              <div className="mt-3 flex items-center justify-between gap-3 text-xs text-white/45">
+                <span className="truncate">{s.category || 'Premium Sponsor'}</span>
+                <span className="h-1 w-1 rounded-full bg-cyan-400/70" />
+                <span className="truncate">{s.bonus || 'Güncel teklif'}</span>
+              </div>
 
               {s.externalUrl && (
-                <a
-                  href={s.externalUrl}
-                  target="_blank"
-                 className="mt-5 inline-flex rounded-2xl border border-white/10 px-4 py-2 text-sm text-white/75 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
-                >
+                <span className="mt-5 inline-flex rounded-2xl border border-white/10 px-4 py-2 text-sm text-white/75 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300">
                   Detaya Git →
-                </a>
+                </span>
               )}
-            </div>
+            </a>
           ))}
         </div>
       </section>
