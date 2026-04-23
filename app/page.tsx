@@ -96,18 +96,18 @@ export default async function Home() {
           {featured && (
             <div id="featured" className="relative">
               <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-2xl">
+              <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-6 shadow-[0_0_50px_rgba(34,211,238,0.08)] backdrop-blur-2xl">
                 <div className="mb-5 flex items-center justify-between">
                   <div>
                     <p className="text-sm text-white/45">Öne Çıkan Sponsor</p>
                     <h3 className="text-2xl font-semibold">{featured.name}</h3>
                   </div>
-                  <div className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-300">
+                  <div className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300 shadow-[0_0_16px_rgba(34,211,238,0.12)]">
                     Featured
                   </div>
                 </div>
 
-                <div className="rounded-[28px] border border-white/10 bg-[#0b1222] p-5">
+                <div className="rounded-[28px] border border-white/10 bg-[#0b1222] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
                   <div className="flex items-center gap-4">
                     <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_0_18px_rgba(34,211,238,0.08)]">
                       {featured.logoUrl ? (
@@ -146,7 +146,7 @@ export default async function Home() {
                     <a
                       href={featured.externalUrl}
                       target="_blank"
-                      className="mt-6 inline-flex rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]"
+                      className="mt-6 inline-flex rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.22)] transition hover:scale-[1.02]"
                     >
                       Siteye Git
                     </a>
