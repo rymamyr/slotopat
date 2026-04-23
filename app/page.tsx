@@ -207,17 +207,17 @@ export default async function Home() {
                 </div>
               </div>
 
-              {s.category && (
-                <div className="mt-1 inline-flex rounded-full border border-white/10 px-3 py-1 text-xs text-white/60">
-                  {s.category}
-                </div>
-              )}
+             <div className="mt-3 flex items-center justify-between gap-3 text-xs text-white/45">
+  <span className="truncate">{s.category || 'Premium Sponsor'}</span>
+  <span className="h-1 w-1 rounded-full bg-cyan-400/70" />
+  <span className="truncate">{s.bonus || 'Güncel teklif'}</span>
+</div>
 
               {s.externalUrl && (
                 <a
                   href={s.externalUrl}
                   target="_blank"
-                  className="mt-6 inline-flex rounded-2xl border border-white/10 px-4 py-2 text-sm text-white/75 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
+                 className="mt-5 inline-flex rounded-2xl border border-white/10 px-4 py-2 text-sm text-white/75 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
                 >
                   Detaya Git →
                 </a>
